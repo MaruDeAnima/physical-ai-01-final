@@ -1,0 +1,60 @@
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pickle
+
+# 学習データを作成する
+# 入力：[左の距離、前方の距離、右の距離]
+# 出力：0=前進、1=左回転、2=右回転
+
+rng = np.random.default_rng(42)
+
+X = []
+y = []
+
+for _ in range(3000):
+    left, front, right = rng.uniform(0.2, 5.0, 3)
+
+    if front >= 0.8:
+        action = 0
+    elif left >= right:
+        action = 1
+    else:
+        action = 2
+
+    X.append([left, front, right])
+    y.append(action)
+
+X = np.array(X)
+y = np.array(y)
+
+# 学習用と評価用のデータに分割
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42,
+    stratify=y
+)
+
+# 決定木AIを学習
+model = DecisionTreeClassifier(
+    max_depth=8,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+# AIの正解率を確認
+predictions = model.predict(X_test)
+accuracy = accuracy_score(y_test, predictions)
+
+print(f"AI accuracy: {accuracy * 100:.1f}%")
+
+# 学習済みAIモデルを保存
+with open(
+    "/home/" + __import__("getpass").getuser()
+    + "/physical_ai_final/scripts/ai_model.pkl",
+    "wb
+) as f:
+    pickle.dump(model, f)
+
+print("AI model saved!")
