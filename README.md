@@ -1,10 +1,10 @@
 
-# AI Obstacle Avoidance Robot
+# Physical AI v1.0 — Alien UFO Adventure
 
 ## Project Overview
 This project demonstrates an AI-based obstacle avoidance robot using ROS 2 Jazzy and Gazebo Harmonic.
 
-The robot detects obstacles using LiDAR, avoids collisions, and navigates toward a goal.
+A Gray alien rides in a UFO, avoids Mount Fuji using AI and LiDAR, reaches the red torii gate, and stops automatically.
 
 ## Environment
 - Ubuntu 24.04 (WSL2)
@@ -37,7 +37,10 @@ Start the ROS 2 bridge in another terminal:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-ros2 run ros_gz_bridge parameter_bridge /scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan /cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist /model/ai_robot/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry
+ros2 run ros_gz_bridge parameter_bridge \
+  '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan' \
+  '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist' \
+  '/model/ai_robot/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry'
 ```
 
 Start the AI controller in a third terminal:
@@ -48,7 +51,7 @@ python3 scripts/ai_controller_success.py
 ```
 
 ## Demonstration
-The robot avoids a red obstacle and navigates to a green goal marker.
+The alien UFO avoids Mount Fuji and navigates to the red torii gate.
 
 ## Result
 The robot successfully reached the goal and stopped automatically.
