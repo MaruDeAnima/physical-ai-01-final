@@ -56,3 +56,38 @@ The alien UFO avoids Mount Fuji and navigates to the red torii gate.
 ## Result
 The robot successfully reached the goal and stopped automatically.
   
+
+## AI Inference
+
+This project uses a trained DecisionTreeClassifier from scikit-learn.
+
+- Training script: `scripts/train_ai.py`
+- Trained model: `ai_model.pkl`
+- AI controller: `scripts/ai_controller_torii.py`
+
+### Input Features
+The AI receives three distance values extracted from LiDAR:
+1. Left distance
+2. Front distance
+3. Right distance
+
+### Prediction
+The model classifies the obstacle situation into three classes:
+
+- `0`: The path ahead is clear
+- `1`: An obstacle is ahead, and the left side is more open
+- `2`: An obstacle is ahead, and the right side is more open
+
+### Robot Control
+The controller calls the trained model during navigation
+using `model.predict()`.
+
+When the model detects an obstacle situation (class 1 or 2),
+the robot reduces its forward speed.
+
+Waypoint navigation and an independent LiDAR emergency stop
+are also used for safety.
+
+### Demonstration Result
+The robot successfully navigated around Mount Fuji,
+passed through the red torii gate, and reached its goal.
