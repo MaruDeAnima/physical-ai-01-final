@@ -1,5 +1,4 @@
 # Physical AI v1.1 — Utsuro-bune
-# Physical AI v1.0 — Alien UFO Adventure
 
 ## Project Overview
 This project demonstrates an AI-based obstacle avoidance robot using ROS 2 Jazzy and Gazebo Harmonic.
