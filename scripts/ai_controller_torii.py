@@ -117,6 +117,41 @@ class AIController(Node):
         elif abs(error) < 0.6:
             cmd.linear.x = 0.06
 
+        # AI推論：LiDARの左・正面・右の距離から危険を判定
+        def sector_distance(angle_min, angle_max):
+            values = []
+            for i, value in enumerate(msg.ranges):
+                angle = msg.angle_min + i * msg.angle_increment
+                if (
+                    angle_min <= angle <= angle_max
+                    and math.isfinite(value)
+                    and msg.range_min <= value <= msg.range_max
+                ):
+                    values.append(value)
+            return min(values) if values else msg.range_max
+
+        left = sector_distance(math.pi / 6, math.pi / 2)
+        front = sector_distance(-math.pi / 6, math.pi / 6)
+        right = sector_distance(-math.pi / 2, -math.pi / 6)
+
+        try:
+            prediction = int(
+                self.model.predict([[left, front, right]])[0]
+            )
+        except Exception as e:
+            self.get_logger().error(f'AI inference failed: {e}')
+            self.publisher.publish(Twist())
+            return
+
+        # AIが前方障害物を検知したら減速
+        if prediction in (1, 2):
+            cmd.linear.x = min(cmd.linear.x, 0.06)
+
+        self.get_logger().info(
+            f'AI prediction={prediction}, front={front:.2f}m',
+            throttle_duration_sec=3.0
+        )
+
         # LiDARによる緊急停止
         front_ranges = []
         for i, value in enumerate(msg.ranges):

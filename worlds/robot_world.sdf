@@ -52,56 +52,160 @@
             </box>
           </geometry>
         </collision>
-        <visual name="fuji_lower">
-          <pose>0 0 0.175 0 0 0</pose>
+        <visual name="fuji_layer_01">
+          <pose>0 0 0.050 0 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.75</radius>
-              <length>0.35</length>
+              <radius>0.780</radius>
+              <length>0.100</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.25 0.50 0.85 1</ambient>
-            <diffuse>0.25 0.50 0.85 1</diffuse>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
           </material>
         </visual>
-        <visual name="fuji_middle">
-          <pose>0 0 0.525 0 0 0</pose>
+        <visual name="fuji_layer_02">
+          <pose>0 0 0.150 0 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.55</radius>
-              <length>0.35</length>
+              <radius>0.722</radius>
+              <length>0.100</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.30 0.55 0.90 1</ambient>
-            <diffuse>0.30 0.55 0.90 1</diffuse>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
           </material>
         </visual>
-        <visual name="fuji_upper">
-          <pose>0 0 0.875 0 0 0</pose>
+        <visual name="fuji_layer_03">
+          <pose>0 0 0.250 0 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.35</radius>
-              <length>0.35</length>
+              <radius>0.664</radius>
+              <length>0.100</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0.35 0.60 0.95 1</ambient>
-            <diffuse>0.35 0.60 0.95 1</diffuse>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
           </material>
         </visual>
-        <visual name="fuji_snow">
-          <pose>0 0 1.15 0 0 0</pose>
+        <visual name="fuji_layer_04">
+          <pose>0 0 0.350 0 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.22</radius>
-              <length>0.2</length>
+              <radius>0.606</radius>
+              <length>0.100</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_05">
+          <pose>0 0 0.450 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.548</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_06">
+          <pose>0 0 0.550 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.490</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_07">
+          <pose>0 0 0.650 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.432</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_08">
+          <pose>0 0 0.750 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.374</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_09">
+          <pose>0 0 0.850 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.316</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.22 0.43 0.78 1</ambient>
+            <diffuse>0.22 0.43 0.78 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_10">
+          <pose>0 0 0.950 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.258</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.96 0.97 1.0 1</ambient>
+            <diffuse>0.96 0.97 1.0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_11">
+          <pose>0 0 1.050 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.200</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.96 0.97 1.0 1</ambient>
+            <diffuse>0.96 0.97 1.0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="fuji_layer_12">
+          <pose>0 0 1.150 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.142</radius>
+              <length>0.100</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.96 0.97 1.0 1</ambient>
+            <diffuse>0.96 0.97 1.0 1</diffuse>
           </material>
         </visual>
       </link>
@@ -109,24 +213,6 @@
     <include>
       <uri>file:///home/marudeanima/physical_ai_final/models/robot.sdf</uri>
     </include>
-    <model name="goal_marker">
-      <static>true</static>
-      <pose>5 0 0.03 0 0 0</pose>
-      <link name="goal_link">
-        <visual name="goal_visual">
-          <geometry>
-            <cylinder>
-              <radius>0.45</radius>
-              <length>0.05</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
     <model name="torii_gate">
       <static>true</static>
       <pose>5 0 0 0 0 0</pose>
@@ -171,7 +257,7 @@
           <pose>0 0 1.4 0 0 0</pose>
           <geometry>
             <box>
-              <size>0.13 1.45 0.13</size>
+              <size>0.13 1.85 0.13</size>
             </box>
           </geometry>
           <material>
